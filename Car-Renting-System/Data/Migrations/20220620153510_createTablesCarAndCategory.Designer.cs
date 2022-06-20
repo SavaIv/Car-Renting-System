@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Car_Renting_System.Data.Migrations
 {
     [DbContext(typeof(CarRentingDbContext))]
-    [Migration("20220614204106_CarAndCategiryTables")]
-    partial class CarAndCategiryTables
+    [Migration("20220620153510_createTablesCarAndCategory")]
+    partial class createTablesCarAndCategory
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -288,7 +288,7 @@ namespace Car_Renting_System.Data.Migrations
                     b.HasOne("Car_Renting_System.Data.Models.Category", "Category")
                         .WithMany("Cars")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Category");

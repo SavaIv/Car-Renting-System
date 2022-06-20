@@ -4,7 +4,7 @@
 
 namespace Car_Renting_System.Data.Migrations
 {
-    public partial class CarAndCategiryTables : Migration
+    public partial class createTablesCarAndCategory : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -42,7 +42,7 @@ namespace Car_Renting_System.Data.Migrations
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
